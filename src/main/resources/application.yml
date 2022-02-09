@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: local
+
+---
+mysql:
+  host: localhost
+  port: 3306
+  username: root
+  password:
+  database: basquiat
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  r2dbc:
+    url: r2dbc:mysql://${mysql.host}:${mysql.port}/${mysql.database}?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: ${mysql.username}
+    password: ${mysql.password}
+    pool:
+      enabled: true
+      initial-size: 10
+      max-size: 30
+      max-idle-time: 30m
+      validation-query: SELECT 1
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8080
