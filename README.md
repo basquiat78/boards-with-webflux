@@ -25,8 +25,6 @@ Swagger : springfox-boot-starter 3.0.0
 
 당시에는 DataBaseClient를 이용한 방식을 활용했지만 이 프로젝트는 필요에 따라서 DataBaseClient의 Wrapper인 R2dbcEntityTemplate도 활용한다.
 
-그리고 ReactiveTransactionManager을 별도로 설정하기 위해서 DatabaseConfiguration을 따로 작성한다.
-
 첫 번째로 만들었던 녀석은 깊게 파지 않아서 좀 어설프고 쓸데없이 멋만 부린 코드들이 다수 존재해서 다 걷어낼 것이다.
 
 그리고 무엇보다 변경된 것들이 좀 있어서 설정 부분의 변경점이 좀 있다. 
