@@ -41,5 +41,17 @@ public class DateUtils {
         return LocalDate.parse(localDate, dateTimeFormatter);
     }
 
+    /**
+     * DB로부터 넘어온 rows의 Object에 대한 파싱 메소드
+     * @param dateTimeObject
+     * @return LocalDateTime
+     */
+    public static LocalDateTime toDateTime(Object dateTimeObject) {
+        if (dateTimeObject instanceof LocalDateTime) {
+            return (LocalDateTime) dateTimeObject;
+        }
+        return null;
+    }
+
 
 }

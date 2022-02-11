@@ -1,5 +1,6 @@
 package io.basquiat.boards.music.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,7 @@ import java.time.LocalDateTime;
 @Table("label")
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Label {
 
     /** unique id */

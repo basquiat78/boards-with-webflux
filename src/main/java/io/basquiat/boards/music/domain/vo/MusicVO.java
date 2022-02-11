@@ -2,6 +2,10 @@ package io.basquiat.boards.music.domain.vo;
 
 import lombok.Data;
 
+/**
+ * music 관련 요청 정보를 담는 Value Ojbect
+ * created by basquiat
+ */
 @Data
 public class MusicVO {
 
@@ -11,7 +15,7 @@ public class MusicVO {
     private String birth;
 
     private String albumId;
-    private String albumTile;
+    private String albumTitle;
     private String albumRelease;
     private String genre;
 

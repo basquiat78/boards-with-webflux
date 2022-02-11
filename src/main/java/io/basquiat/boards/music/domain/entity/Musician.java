@@ -1,5 +1,6 @@
 package io.basquiat.boards.music.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * musician entity
@@ -19,6 +21,7 @@ import java.time.LocalDateTime;
 @Table("musician")
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Musician {
 
     /** unique id */
@@ -45,5 +48,7 @@ public class Musician {
     /** 갱신일 */
     @Column("updated_at")
     private LocalDateTime updatedAt;
+
+    private List<Album> albums;
 
 }
