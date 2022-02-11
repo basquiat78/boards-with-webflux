@@ -12,7 +12,7 @@ OS: macOS Monterey v12.2.
 JAVA: openjdk version "11.0.10" 2021-01-19.   
 OS: macOS Catalina v10.15.5.   
 IDE: IntelliJ IDEA 2020.1.2 (Community Edition)    
-Plugin: Lombok.   
+Plugin: Lombok   
 Database: mySql 8.0.26.   
 Spring Boot: 2.6.3   
 with Gradle 7.3    
