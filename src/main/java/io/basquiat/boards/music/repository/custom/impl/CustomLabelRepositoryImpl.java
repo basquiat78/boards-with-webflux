@@ -1,7 +1,7 @@
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.music.domain.entity.Label;
-import io.basquiat.boards.music.repository.CustomLabelRepository;
+import io.basquiat.boards.music.repository.custom.CustomLabelRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;

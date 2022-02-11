@@ -1,6 +1,7 @@
 package io.basquiat.boards.music.repository;
 
 import io.basquiat.boards.music.domain.entity.Album;
+import io.basquiat.boards.music.repository.custom.CustomAlbumRepository;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

@@ -470,10 +470,10 @@ public interface CustomAlbumRepository {
 
 }
 
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.music.domain.entity.Album;
-import io.basquiat.boards.music.repository.CustomAlbumRepository;
+import io.basquiat.boards.music.repository.custom.CustomAlbumRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import reactor.core.publisher.Mono;
@@ -1181,10 +1181,10 @@ public interface CustomMusicianRepository {
 
 CustomMusicianRepositoryImpl.java
 ```
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.music.domain.entity.Musician;
-import io.basquiat.boards.music.repository.CustomMusicianRepository;
+import io.basquiat.boards.music.repository.custom.CustomMusicianRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
@@ -1335,12 +1335,12 @@ Flux<Map<String, Object>의 형식이 Flux<List<Map<String, Object>>의 형식�
 완성된 코드
 
 ```
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.music.domain.entity.Album;
 import io.basquiat.boards.music.domain.entity.Label;
 import io.basquiat.boards.music.domain.entity.Musician;
-import io.basquiat.boards.music.repository.CustomMusicianRepository;
+import io.basquiat.boards.music.repository.custom.CustomMusicianRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
@@ -1523,12 +1523,12 @@ musicianId|name         |instrument                                       |birth
 속도 향상을 위해서 bufferUntilChanged를 사용하지만 저게 싫다면...
 
 ```
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.music.domain.entity.Album;
 import io.basquiat.boards.music.domain.entity.Label;
 import io.basquiat.boards.music.domain.entity.Musician;
-import io.basquiat.boards.music.repository.CustomMusicianRepository;
+import io.basquiat.boards.music.repository.custom.CustomMusicianRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
@@ -1733,13 +1733,13 @@ public class RowToMapMapper implements BiFunction<Row, RowMetadata, Map<String, 
 }
 
 
-package io.basquiat.boards.music.repository.impl;
+package io.basquiat.boards.music.repository.custom.impl;
 
 import io.basquiat.boards.common.mapper.RowToMapMapper;
 import io.basquiat.boards.music.domain.entity.Album;
 import io.basquiat.boards.music.domain.entity.Label;
 import io.basquiat.boards.music.domain.entity.Musician;
-import io.basquiat.boards.music.repository.CustomMusicianRepository;
+import io.basquiat.boards.music.repository.custom.CustomMusicianRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;

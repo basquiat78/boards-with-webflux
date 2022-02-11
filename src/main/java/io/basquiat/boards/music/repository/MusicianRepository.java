@@ -1,6 +1,7 @@
 package io.basquiat.boards.music.repository;
 
 import io.basquiat.boards.music.domain.entity.Musician;
+import io.basquiat.boards.music.repository.custom.CustomMusicianRepository;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 /**

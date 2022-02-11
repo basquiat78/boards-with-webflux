@@ -1,4 +1,4 @@
-package io.basquiat.boards.music.repository;
+package io.basquiat.boards.music.repository.custom;
 
 import io.basquiat.boards.music.domain.entity.Musician;
 import reactor.core.publisher.Flux;
