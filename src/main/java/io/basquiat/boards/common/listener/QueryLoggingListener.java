@@ -21,7 +21,20 @@ public class QueryLoggingListener implements ProxyExecutionListener {
                                                                                  .showQuery()
                                                                                  .newLine()
                                                                                  .showBindings()
-                                                                                 .newLine();
+                                                                                 .newLine()
+                                                                                 .addConsumer((info, sb) -> {
+                                                                                        sb.append("Result Count : ");
+                                                                                        sb.append(info.getCurrentResultCount());
+                                                                                 });
+        log.info(formatter.format(execInfo));
+    }
+
+    @Override
+    public void eachQueryResult(QueryExecutionInfo execInfo) {
+        QueryExecutionInfoFormatter formatter = new QueryExecutionInfoFormatter().addConsumer((info, sb) -> {
+                                                                                        sb.append("Result Row : ");
+                                                                                        sb.append(info.getCurrentMappedResult());
+                                                                                 });
         log.info(formatter.format(execInfo));
     }
 

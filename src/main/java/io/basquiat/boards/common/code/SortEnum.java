@@ -12,8 +12,8 @@ import java.util.function.Function;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public enum SortEnum {
 
-    DESC((order) -> Sort.by(order).descending()),
-    ASC((order) -> Sort.by(order).ascending());
+    DESC(order -> Sort.by(order).descending()),
+    ASC(order -> Sort.by(order).ascending());
 
     /** funtional interface set */
     private Function<String, Sort> function;
