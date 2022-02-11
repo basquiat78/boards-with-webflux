@@ -6,10 +6,13 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import io.basquiat.boards.common.code.SortEnum;
 import io.basquiat.boards.common.exception.JsonConvertException;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -124,6 +127,26 @@ public class CommonUtils {
      */
     public static String fm(String format, Object...args) {
         return MessageFormat.format(format, args);
+    }
+
+    /**
+     * Sort 객체를 반환한다.
+     * @param sort
+     * @param order
+     * @return Sort
+     */
+    public static Sort sorting(String sort, String order) {
+        // sort, order 정보가 없다면
+        if(!StringUtils.hasLength(sort) || !StringUtils.hasLength(order)) {
+            return Sort.unsorted();
+        }
+        try {
+            return SortEnum.valueOf(sort).sort(order);
+        } catch (Exception e) {
+            // 실수로 sort 값이 enum에 정의되지 않는 값이 넘어온다면 로그만 남기고 그냥 소트하지 않는다.
+            log.info("Sort키가 SortEnum에 정의되지 않는 값입니다. 확인하세요");
+            return Sort.unsorted();
+        }
     }
 
 }

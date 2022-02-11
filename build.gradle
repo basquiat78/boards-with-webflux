@@ -22,6 +22,8 @@ dependencies {
 	// mysql setting
 	implementation 'mysql:mysql-connector-java:8.0.28'
 	implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
+	implementation 'io.r2dbc:r2dbc-proxy:0.8.8.RELEASE'
+
 
 	// lombok setting
 	compileOnly 'org.projectlombok:lombok:1.18.22'

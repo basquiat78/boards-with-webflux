@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <property name="LOG_DIR" value="./logs"/>
+    <property name="LOG_NAME" value="board-with-webflux"/>
+    <property name="FILE_LOG_PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{YYYY-MM-dd HH:mm:ss z, Asia/Seoul}] [%-5level] [%thread] %logger{36}:%L - %msg -- %X{log.remoteAddr}%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${LOG_DIR}/${LOG_NAME}.log</file>
+
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${LOG_NAME}.%d{yyyy-MM-dd}.log.%i.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+
+    </appender>
+
+    <springProfile name="local">
+        <root level="info">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+        <logger name="io.basquiat.boards" additivity="false" level="debug">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </logger>
+    </springProfile>
+
+    <!--
+     <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+        <logger name="io.basquiat.boards" additivity="false" level="debug">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="stage">
+        <root level="info">
+           <appender-ref ref="CONSOLE"/>
+        </root>
+        <logger name="io.basquiat.boards" additivity="false" level="debug">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="info">
+           <appender-ref ref="CONSOLE"/>
+        </root>
+        <logger name="io.basquiat.boards" additivity="false" level="debug">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </logger>
+    </springProfile>
+    -->
+
+
+</configuration>

@@ -18,5 +18,6 @@ public class MySqlProperty {
     private String username;
     private String password;
     private String database;
+    private String proxyListener;
 
 }

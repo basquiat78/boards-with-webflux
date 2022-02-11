@@ -1,4 +1,4 @@
-package io.basquiat.boards.meta.domain;
+package io.basquiat.boards.music.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,30 +11,30 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.time.LocalDateTime;
 
 /**
- * meta data entity
+ * label entity
  * created by basquiat
  */
 @Builder
 @Data
-@Table("meta_data")
+@Table("label")
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class MetaData {
+public class Label {
 
     /** unique id */
     @Id
     @Column("id")
     private Long id;
 
-    /** 메타 코드 */
-    @Column("meta_code")
-    private String metaCode;
+    /** 레이블 명 */
+    @Column("name")
+    private String name;
 
     /** 등록일 */
     @Column("created_at")
     private LocalDateTime createdAt;
 
-    /** 변경일 */
+    /** 갱신일 */
     @Column("updated_at")
     private LocalDateTime updatedAt;
 
