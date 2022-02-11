@@ -15,7 +15,7 @@ IDE: IntelliJ IDEA 2020.1.2 (Community Edition)
 Plugin: Lombok.   
 Database: mySql 8.0.26.   
 Spring Boot: 2.6.3.   
-with Gradle.    
+with Gradle 7.3    
 
 progress
 Swagger : springfox-boot-starter 3.0.0
