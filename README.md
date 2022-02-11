@@ -609,6 +609,8 @@ Bindings:[(%e%)]
 ```
 과 같이 before/after로 쿼리 로깅이 된 것을 확인 할 수 있다.__
 
+위에서 Result rows 정보도 찍을 수 있도록 작업완료
+
 # At A Glance
 뭔가 두서가 없는 코드들이 있어서 정리를 하고 로깅과 r2dbc-proxy를 통한 쿼리 로그 작업을 진행했다.
 
