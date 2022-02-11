@@ -611,6 +611,44 @@ Bindings:[(%e%)]
 
 위에서 Result rows 정보도 찍을 수 있도록 작업완료
 
+```
+package io.basquiat.boards.music.repository.impl;
+
+import io.basquiat.boards.music.domain.entity.Label;
+import io.basquiat.boards.music.repository.CustomLabelRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
+import org.springframework.data.relational.core.query.Query;
+import org.springframework.util.StringUtils;
+import reactor.core.publisher.Flux;
+
+import static org.springframework.data.relational.core.query.Criteria.where;
+import static org.springframework.data.relational.core.query.Query.query;
+
+@RequiredArgsConstructor
+public class CustomLabelRepositoryImpl implements CustomLabelRepository {
+
+    private final R2dbcEntityTemplate query;
+
+    public Flux<Label> findLabelsWithPageable(Pageable pageable, String searchValue) {
+        Query initQuery = Query.empty();
+        if(StringUtils.hasLength(searchValue)) {
+            initQuery = query(where("name").like("%" + searchValue + "%"));
+        }
+        return query.select(Label.class)
+                    .matching(initQuery.limit(pageable.getPageSize())
+                                       .offset(pageable.getOffset())
+                                       .sort(pageable.getSort()))
+                    .all();
+
+    }
+
+}
+
+```
+기존 코드에서 null을 다뤘지만 모양새가 좋지 못한거 같다아서 Query객체를 직접 다루는 방식으로 변경
+
 # At A Glance
 뭔가 두서가 없는 코드들이 있어서 정리를 하고 로깅과 r2dbc-proxy를 통한 쿼리 로그 작업을 진행했다.
 
