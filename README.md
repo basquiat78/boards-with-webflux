@@ -6,7 +6,9 @@
 
 "게시판 하나 끼깔나게 만들면 왠만한거 다 할 수 있어."
 
-[1.musician-section-1](https://github.com/basquiat78/boards-with-webflux/tree/1.musician-section-1)
+[1.musician-section-1](https://github.com/basquiat78/boards-with-webflux/tree/1.musician-section-1)     
+
+[2.musician-section-2](https://github.com/basquiat78/boards-with-webflux/tree/1.musician-section-2)
 
 
 ## Prerequisites
