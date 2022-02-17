@@ -654,4 +654,7 @@ public class CustomLabelRepositoryImpl implements CustomLabelRepository {
 
 쿼리 로그의 경우에는 좀 더 공부를 해서 그럴싸한 로깅을 할 수 있도록 진행중에 조금씩 변경을 해보고자 한다.
 
-일단 Label를 대상으로 간단한 페이징, 다이나믹 쿼리정도만 먼저 진행하고 다음 브랜치에서 좀 더 그럴싸하게 만들어 본다.     
+일단 Label를 대상으로 간단한 페이징, 다이나믹 쿼리정도만 먼저 진행하고 다음 브랜치에서 좀 더 그럴싸하게 만들어 본다.    
+
+[2.musician-section-2](https://github.com/basquiat78/boards-with-webflux/tree/1.musician-section-2)
+
